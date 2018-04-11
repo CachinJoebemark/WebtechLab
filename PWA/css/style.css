@@ -59,6 +59,15 @@ input[type=text]{
   border: none;
   background: #f1f1f1;
 }
+/*Services */
+select {
+  width: auto;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
 /*Insert or Submit*/
 div button {
     background-color: #4CAF50;
