@@ -1,9 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Dental Clinic Manager</title>
 </head>
 <body>
-
+	<header>
+		<h1>Dental Clinic Transaction Manager</h1>
+	</header>
+	<div class="container">	
+		<button class="trigger2">Show Fees and Services</button>
+	    <div class="modal2">
+	        <div class="modal-content2">
+	            <span class="close-button2">&times;</span>
+	            <h1>Dental Clinic</h1>
+	            <h3>Services and Fees</h3>
+	            <ul>
+	            	<li><strong>Extraction =</strong> Php 750.00</li>
+	            	<li><strong>Surgical Removal =</strong> Php 2,000.00</li>
+	            	<li><strong>Tooth Whitening =</strong> Php 4,500.00</li>
+	            	<li><strong>Flexible removable denture =</strong> Php 3,800.00</li>
+	            	<li><strong>Full denture =</strong> Php 5,000.00</li>
+	            	<li><strong>Crown gold =</strong> Php 10,000.00</li>
+	            	<li><strong>Root Canal Treatment =</strong> Php 6,000.00</li>
+	            	<li><strong>Crown Removal =</strong> Php 1,000.00</li>
+	            	<li><strong>Bridge Removal =</strong> Php 2,000.00</li>
+	            	<li><strong>Odontectomy =</strong> Php 8,000.00</li>
+	            </ul>
+	            <h5>Note: The following are the different services and their minimum fees. Fees will vary depending on the case of the tooth. </h5>
+	        </div>
+	    </div>
+	    <button class="trigger">Add Transaction</button>
+       	<div class="modal">
+	        <div class="modal-content">
+	            <span class="close-button">&times;</span>
+        			<legend>Insert Data</legend>
+        			<div class="row">
+	        			<div class="columns">
+	        				<label for="id"><b>ID</b></label>
+			       			<input type="text" placeholder="Enter ID" name="id" id="id" required>
+			       			<label for="fname"><b>First Name</b></label>
+							<input type="text" placeholder="Enter First Name" name="fname" id="first" required>
+							<label for="lname"><b>Last Name</b></label>
+							<input type="text" placeholder="Enter Lastname" id="last" name="lname" required>
+							<label for="dateOfServices"><b>Date Of Service</b></label>
+							<input type="date" name="dateOfServices" id="dateOfServices" required>
+	        			</div>
+	        			<div class="columns">
+							<label for="service"><b>Service: </b></label>
+							<input type="text" placeholder="Service" name="service" id="service" required>
+							<br>
+							<label for="amount"><b>Amount</b></label>
+							<input type="text" placeholder="Enter Amount" name="amount" id="amount" required>	
+							<label for="button"></label>
+	        			</div>
+	        		</div>	
+					<button type="button" id="insertData">Insert Data</button>
+	        </div>
+	    </div>       		
+       		<fieldset>
+       			<legend>Transactions</legend>
+       			<div id="storageOut"></div>
+       		</fieldset>
+	</div>
 </body>
+	<script src="js/function.js"></script>
+	<script src="js/vanilla.js"></script>
 </html>
