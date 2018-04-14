@@ -16,20 +16,10 @@ trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
-var modal2 = document.querySelector(".modal2");
-var trigger2 = document.querySelector(".trigger2");
-var closeButton2 = document.querySelector(".close-button2");
-
-function toggleModal2() {
-    modal2.classList.toggle("show-modal2");
+Date.prototype.toDateString = function() {
+ return [this.getDate() < 10 ? '0' + this.getDate() : this.getDate(), this.getMonth() < 9 ? '0' + (this.getMonth() + 1) : this.getMonth() + 1, this.getFullYear()].join('/')
 }
 
-function windowOnClick2(event) {
-    if (event2.target === modal2) {
-        toggleModal2();
-    }
+if (document.getElementById) onload = function() {
+ document.getElementById('dateDefault').value = new Date().toDateString()
 }
-
-trigger2.addEventListener("click", toggleModal2);
-closeButton2.addEventListener("click", toggleModal2);
-window.addEventListener("click", windowOnClick2);
