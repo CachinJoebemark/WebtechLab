@@ -1,57 +1,13 @@
-@media only screen and (max-width: 700px) {
-   .modal-content {
-      font-size: 10px;
-      width: 100%;
-      height: auto;
-      margin: auto;
-    }
-    .row {
-      display: block;
-    }
-    input {
-      width: 100%;
-      height: 100%;
-      font-size: 8px;
-    }
-    select {
-     width: 100%; 
-     max-width: 100%;
-     font-size: 10px;
-    }
-    option {
-      font-size: 10px;
-    }
-    .header {
-      width: 100%;
-      font-size: 9px;
-    }
-    #showTransaction {
-      font-size: 10px;
-      width: auto;
-      height: 100%;
-    }
-    button {
-      width: auto;
-      height: auto;
-      font-size: 10px;
-    }
-}/*
 /*Positioning the header to the top*/
 header {
     text-align: center;
-    position: absolute;
-    top:0;
+    position: relative;
     right: 0;
     left: 0;
     overflow: hidden;
     background-color: #F59502;
-}
-/*Contetnt*/
-.container {
-  position: absolute;
-  top:auto;
-  right: 0;
-  left: 0;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
 /*Rows and Columns*/
 .columns {
@@ -67,13 +23,12 @@ header {
 /*Insert Transaction*/
 .trigger {
   border-radius: 50%;
-  background-color: white;
 }
 /* custom styles */
 body {
   padding: 4em;
   background: #e5e5e5;
-  font: 10px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
 label {
   display: block;
@@ -97,34 +52,31 @@ input[type=text]{
 
 /*Services */
 select {
-  width: 100%;
+  width: auto;
   padding: 5px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
-  font: 10px Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-}
-option {
-  font: 10px Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
 /*Insert or Submit*/
 div button {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 15px;
-    margin: 8px;
+    padding: 14px 20px;
+    margin: 8px 0;
     border: none;
     cursor: pointer;
     width: auto;
 }
 /*Popup-Panel Add Transaction*/
 .modal {
-    position: relative;
-    display: block;
-    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     transform: scale(1.1);
@@ -132,26 +84,25 @@ div button {
 }
 .modal-content {
     position: absolute;
-    top: auto;
-    left: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
     padding: 1rem 1.5rem;
-    width: auto;
+    width: 30rem;
     border-radius: 0.5rem;
 }
 .close-button {
     float: right;
-    border: 1px solid red;
     width: 1.5rem;
     line-height: 1.5rem;
     text-align: center;
     cursor: pointer;
-    border-radius: 5px;
-    background-color: white;
-    
+    border-radius: 0.25rem;
+    background-color: #959595;
 }
 .close-button:hover {
-    background-color: red;
+    background-color: #959595;
 }
 .show-modal {
     opacity: 1;
@@ -159,3 +110,9 @@ div button {
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
+li {
+  overflow: hidden;
+  font-size: 18px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+

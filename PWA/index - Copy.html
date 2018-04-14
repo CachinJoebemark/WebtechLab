@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/style.css">
+	<title>PWA Test</title>
+</head>
+<style media="screen">
+input {
+	padding: 7px;
+	height: 40px;
+}
+
+fieldset{
+	margin-bottom: 20px;
+}
+</style>
+<body>
+	<header>
+		<h1>Dental Clinic Transaction Manager</h1>
+	</header>
+	<div class="container">	
+		<!-- <button type="button" onclick="sum();" id="total">Compute Total Fees</button> Not functional don't touch plz -->
+		<button id="Show all Transactions" onclick="showAll();">Show All Transactions</button>
+	    <button class="trigger">&#10133;</button>
+       	<div class="modal">
+	        <div class="modal-content">
+	            <span class="close-button">&times;</span>
+        			<div class="row">
+	        			<div class="columns">
+			       			<label for="fname"><b>First Name</b></label>
+							<input type="text" placeholder="Enter First Name" name="fname" id="first" required>
+							<label for="lname"><b>Last Name</b></label>
+							<input type="text" placeholder="Enter Lastname" id="last" name="lname" required>
+
+							<label for="DefaultDate"><b>Date Of Service</b></label>
+							<input type="date" id="dateDefault" name="DefaultDate">
+							
+	        			</div>
+	        			<div class="columns">
+							<label><b>Services</b></label>
+							<div class="row">
+								<div class="columns">
+									<input type="checkbox" id="services1" name="services-1" value="service1">
+									<label for="services1">Extraction</label>
+
+									<input type="checkbox" id="services2" name="services-2" value="service2">
+									<label for="services2">Surgical Removal</label>
+									
+									<input type="checkbox" id="services3" name="services-3" value="service3">
+									<label for="services3">Tooth Whitening</label>
+									
+									<input type="checkbox" id="services4" name="services-4" value="service4">
+									<label for="services4">Flexible Removable Denture</label>
+
+									<input type="checkbox" id="services4" name="services-4" value="service4">
+									<label for="services4">Odontectomy</label>
+								</div>
+								<div class="columns">				
+									<input type="checkbox" id="services5" name="services-5" value="service5">
+									<label for="services5">Full Denture</label>
+
+									<input type="checkbox" id="services6" name="services-6" value="service6">
+									<label for="services6">Crown Gold</label>
+									
+									<input type="checkbox" id="services7" name="services-7" value="service7">
+									<label for="services7">Root Canal Treatment</label>
+									
+									<input type="checkbox" id="services8" name="services-8" value="service8">
+									<label for="services8">Crown Removal</label>
+
+									<input type="checkbox" id="services8" name="services-8" value="service8">
+									<label for="services8">Bridge Removal</label>
+								</div>
+							</div>
+			<!--			<label for="service"><b>Service: </b></label>
+							<input type="text" placeholder="Service" name="service" id="service" required>  -->
+							<br>
+							<label for="amount"><b>Amount</b></label>
+							<div class="serviceTotal" style="border: 1px solid green;height: 30px;"> TOTAL AMOUNT TO PAY</div>
+	        			</div>
+	        		</div>	
+					<button type="button" id="insertData">Insert Data</button>
+	        </div>
+	    </div>       		
+       		<fieldset>
+       			<legend>Transactions</legend>
+       			<div id="storageOut"></div>
+       		</fieldset>
+       		<fieldset>
+       			<legend>Total</legend>
+       			<div id="computeOut"></div>
+       		</fieldset>
+	</div>
+
+</body>
+	<script src="js/function.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/vanilla.js"></script>
+</html>

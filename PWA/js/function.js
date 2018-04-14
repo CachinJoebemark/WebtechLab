@@ -1,11 +1,6 @@
 function print() {
 
 	if (typeof(Storage) !== "undefined") {  
-	//ID
-	var pId = !!localStorage.getItem('id') ? JSON.parse(localStorage.getItem('id')): [];
-	var id = document.getElementById('id').value;
-	pId.push(id);
-	localStorage.setItem('id',JSON.stringify(pId));
 	//First
 	var nameFirst = !!localStorage.getItem('first') ? JSON.parse(localStorage.getItem('first')): [];
 	var first = document.getElementById('first').value;
@@ -18,10 +13,14 @@ function print() {
 	localStorage.setItem('last',JSON.stringify(nameLast));
 	//Date
 	var sDate = !!localStorage.getItem('date') ? JSON.parse(localStorage.getItem('date')) : [];
-	var date = document.getElementById('dateOfServices').value;
+	var date = document.getElementById('dateDefault').value;
 	sDate.push(date);
 	localStorage.setItem('date',JSON.stringify(sDate));
 	//Service
+	/* daytoy adi jay agala ti value ti service
+	var e = document.getElementById("listOfServices");
+	var strUser = e.options[e.selectedIndex].value;
+	*/
 	var sService = !!localStorage.getItem('service') ? JSON.parse(localStorage.getItem('amount')) : [];
 	var service = document.getElementById('service').value;
 	sService.push(service);
@@ -53,7 +52,7 @@ function showAll(){
 		var amount = localStorage.getItem('amount');
 		//var finAmount = JSON.parse(amount);
 		//var result = finFirst +" ,"+ finLast +" ," + finService +" ,"+ finAmount; //Works ngem ada basit kamali na boiiiiii
-		var result = first +" "+ last +" "+ service +" "+ amount;
+		var result = first +" "+ last +" "+ date + " "+ service +" "+ amount;
 		document.getElementById('storageOut').innerHTML = result;
 	}
 }
