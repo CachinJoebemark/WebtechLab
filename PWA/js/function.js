@@ -1,71 +1,80 @@
-function print() {
+
+//taga ala value ti first,last tapos jay date automatic :))
+function set() {
 
 	if (typeof(Storage) !== "undefined") {  
-	//First
-	var nameFirst = !!localStorage.getItem('first') ? JSON.parse(localStorage.getItem('first')): [];
-	var first = document.getElementById('first').value;
+	//First Name
+	var first = document.getElementById('name').value;
+	var nameFirst = !!localStorage.getItem('name') ? JSON.parse(localStorage.getItem('name')): [];
 	nameFirst.push(first);
-	localStorage.setItem('first',JSON.stringify(nameFirst));
-	//Last
-	var nameLast = !!localStorage.getItem('last') ? JSON.parse(localStorage.getItem('last')): [];
-	var last = document.getElementById('last').value;
-	nameLast.push(last);
-	localStorage.setItem('last',JSON.stringify(nameLast));
+	localStorage.setItem('name',JSON.stringify(nameFirst));
 	//Date
-	var sDate = !!localStorage.getItem('date') ? JSON.parse(localStorage.getItem('date')) : [];
-	var date = document.getElementById('dateDefault').value;
-	sDate.push(date);
-	localStorage.setItem('date',JSON.stringify(sDate));
-	//Service
-	/* daytoy adi jay agala ti value ti service
-	var e = document.getElementById("listOfServices");
-	var strUser = e.options[e.selectedIndex].value;
+	//todo
+	/*Icomplete
+	var date = !!localStorage.getItem('date') ? JSON.parse(localStorage.getItem('date')): [];
+	var d = new Date();
+	var s = d.toLocaleDateString();
 	*/
-	var sService = !!localStorage.getItem('service') ? JSON.parse(localStorage.getItem('amount')) : [];
-	var service = document.getElementById('service').value;
-	sService.push(service);
-	localStorage.setItem('service',JSON.stringify(sService));
-	//Amount/Price
-	var aAmount = !!localStorage.getItem('amount') ? JSON.parse(localStorage.getItem('amount')) : [];
-	var amount = document.getElementById('amount').value;
-	aAmount.push(amount);
-	localStorage.setItem('amount', JSON.stringify(aAmount));
-	
 	} else {  
    	document.write('browser not supported');
 	}  
-	
-	//var dataResult = first +" "+ last +" " + date +" " + service +" "+ amount;
-    //document.getElementById('storageOut').innerHTML = dataResult;
 }
-	document.getElementById('insertData').addEventListener('click', print);	
+//Events binded to insertData button
+	var eventhehe = document.getElementById('insertData');
+	eventhehe.addEventListener('click', function() {
+     set();
+     getPrice();
+	});
 
+	//Services
+	//todo
+	/*Incomplete
+	*/
 
+/*
+*/
+//Alaen na jay total boi ikarga na iti array nga agnagan ti sumArr
+function getPrice(){
+	var summer = !!localStorage.getItem('price') ? JSON.parse(localStorage.getItem('price')): [];
+	var summerI = document.getElementsByClassName('messageCheckbox');
+	var minA = 0;
+	for(var i=0; i < 10; i++){
+      	if(summerI[i].checked === true){
+	        summerPrice = Number(summerI[i].value);
+	        summer.push(summerPrice);            
+	    }
+	}
+	localStorage.setItem('price',JSON.stringify(summer));
+}
+//Clears localStorage
+function clearStorage(){
+		window.localStorage.clear();
+		location.reload();
+}
+//Add pop up function here - Julius
+function showConfirm(){
+	var r=confirm("Are you sure you want to clear the storage? Please be reminded that this may not be undone.")
+		if(r==true){
+			alert("The storage has been cleared!")
+			clearStorage();
+		}
+		else{
+			alert("You chose not to clear the storage.")
+		}
+}
+//
+//Ipakita na amin lool
 function showAll(){
 	for(let i = 0;i < localStorage.length;i++){
-		var first = localStorage.getItem('first');
-		//var finFirst = JSON.parse(first);
-		var last = localStorage.getItem('last');
-		//var finLast = JSON.parse(last);
+		var fullname = localStorage.getItem('name');
+		//var last = localStorage.getItem('last');
+		//var today = localStorage.getItem('date');
 		var service = localStorage.getItem('service');
-		//var finService = JSON.parse(service);
-		var amount = localStorage.getItem('amount');
-		//var finAmount = JSON.parse(amount);
-		//var result = finFirst +" ,"+ finLast +" ," + finService +" ,"+ finAmount; //Works ngem ada basit kamali na boiiiiii
-		var result = first +" "+ last +" "+ date + " "+ service +" "+ amount;
+		//var price = localStorage.getItem('price')
+
+		var result = "Patient Name:"+fullname +" "+service;
 		document.getElementById('storageOut').innerHTML = result;
 	}
 }
-
-/*function sum(){
-	var values = localStorage.getItem('amount');
-	var data = JSON.parse(values);
-	var sum = 0;
-
-	data.forEach(function(ele){
-		sum+=Number(ele.amount)
-	})
-	console.log(sum);
-}*///Sad madi na e compute 
 
 
