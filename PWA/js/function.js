@@ -117,6 +117,7 @@ function checkTotal() {
 		for (i=0;i<document.listForm.choice.length;i++) {
 		  if (document.listForm.choice[i].checked) {
 		  	sum = sum + parseInt(document.listForm.choice[i].value);
+			localStorage.setItem('price',JSON.stringify(sum));
 		  }
 		}
 		document.listForm.total.value = sum;
