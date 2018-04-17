@@ -124,3 +124,22 @@ function checkTotal() {
 	}
 
 
+//Ajax
+//adda kamali na idjay url nga pagsendan na ti data
+//Adda met ti kamali na idjay service worker kanu
+function sendAllData(){
+
+	var fullname = localStorage.getItem('name');
+	var last = localStorage.getItem('last');
+	var today = localStorage.getItem('date');
+	var service = localStorage.getItem('service');
+	var price = localStorage.getItem('price')
+
+	var result = "Patient Name:"+fullname +"<br/> Date: "+ today +"<br/> Service(s): "+service+"<br/> Price: "+price;
+	document.getElementById('storageOut').innerHTML = result;
+	
+	var request = new XMLHttpRequest();
+	request.open('POST','accept.txt', true);
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+	request.send(result);
+}
