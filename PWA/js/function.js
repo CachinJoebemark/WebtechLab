@@ -126,7 +126,6 @@ function checkTotal() {
 
 //Ajax
 //adda kamali na idjay url nga pagsendan na ti data
-//Adda met ti kamali na idjay service worker kanu
 function sendAllData(){
 
 	var fullname = localStorage.getItem('name');
@@ -138,7 +137,7 @@ function sendAllData(){
 	var result = "Patient Name:"+fullname +"<br/> Date: "+ today +"<br/> Service(s): "+service+"<br/> Price: "+price;
 	
 	var request = new XMLHttpRequest();
-	request.open('POST',urlhere, true);
+	request.open('POST',urlhere/Server, true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 	request.send(result);
 }
