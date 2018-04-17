@@ -15,16 +15,6 @@
   <meta name="msapplication-TileColor" content="#2F3BA2">
 	<title>PWA Test</title>
 </head>
-<style media="screen">
-input {
-	padding: 7px;
-	height: 40px;
-}
-
-fieldset{
-	margin-bottom: 20px;
-}
-</style>
 <body>
 	<header>
 		<h1>Dental Clinic Transaction Manager</h1>
@@ -32,120 +22,89 @@ fieldset{
 	<div class="container">	
 		<!-- <button type="button" onclick="sum();" id="total">Compute Total Fees</button> Not functional don't touch plz -->
 		<button id="Show all Transactions" onclick="showAll();">Show All Transactions</button>
-		<button id="Clear localStorage" onclick="showConfirm();">Clear localStorage</button>
-		<button class="trigger2">Show Fees and Services</button>
-	    <div class="modal2">
-	        <div class="modal-content2">
-	            <span class="close-button2">&times;</span>
-	            <h1>Dental Clinic</h1>
-	            <h3>Services and Fees</h3>
-	            <ul>
-	            	<li>Extraction - 750</li>
-	            	<li>Surgical Removal - 2000</li>
-	            	<li>Tooth Whitening - 4500</li>
-	            	<li>Flexible removable denture - 3800</li>
-	            	<li>Full denture - 5000</li>
-	            	<li>Crown gold - 10000</li>
-	            	<li>Root Canal Treatment - 6000</li>
-	            	<li>Crown Removal - 1000</li>
-	            	<li>Bridge Removal - 2000</li>
-	            	<li>Odontectomy - 8000</li>
-	            </ul>
-	            <h5>Note: The following fees for different services are fixed.</h5>
-	        </div>
-	    </div>
 	    <button class="trigger">Add Transaction</button>
        	<div class="modal">
 	        <div class="modal-content">
 	            <span class="close-button">&times;</span>
-        			<div class="row">
-	        			<div class="columns">
-	        				<label for="fname"><b>Full Name</b></label>
-							<input type="text" placeholder="Fullname(Surname,Given name)" name="fname" id="name" required>
-	        			</div>
-	        			 <div class="columns">
-							<label for="service"><b>Additional Fees </b></label>
-							<input type="text" placeholder="Enter the amount of additional fees" name="service" id="service" required>
-							<br>
-							<label for="amount"><b>Total Amount</b></label>
-							<input type="text" placeholder="*total amount should be displayed here*" name="amount" id="amount" required>	
-							<label for="button"></label>
-	        			</div> 
-	        		</div>	
-	        		<div class="control-group">
+	            <form name="listForm" >
+	        			<label for="fname"><b>Full Name</b></label>
+						<input type="text" placeholder="Surname,Given name" name="fname" id="name"  required>
+	        		<div class="control-group"  >
 	        			<label>Services</label>
-				        <label class="control control-checkbox">
-				            Extraction
-				            <input class="messageCheckbox" type="checkbox" id="extraction" name="Extraction" value="750"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Surgical Removal
-				            <input class="messageCheckbox" type="checkbox" id="surgical" name="Surgical Removal" value="2000"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Tooth Whitening
-				            <input class="messageCheckbox" type="checkbox" id="whitening" name="Tooth Whitening" value="4500"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Flexible Removable Denture
-				            <input class="messageCheckbox" type="checkbox" id="flexible" name="Flexible Removable Denture" value="3800"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Odontectomy
-				            <input class="messageCheckbox" type="checkbox" id="odontectomy" name="Odontectomy" value="8000"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Full Denture
-				            <input class="messageCheckbox" type="checkbox" id="fullden" name="Full Denture" value="5000"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Crown Gold
-				            <input class="messageCheckbox" type="checkbox" id="crowngold" name="Crown Gold" value="10000"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Root Canal Treatment
-				            <input class="messageCheckbox" type="checkbox" id="rootcanal" name="Root Canal Treatment" value="6000"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Crown Removal
-				            <input class="messageCheckbox" type="checkbox" id="crossremoval" name="Crown Removal" value="1000"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        <label class="control control-checkbox">
-				            Bridge Removal
-				            <input class="messageCheckbox" type="checkbox" id="bridgeremoval" name="Bridge Removal" value="2000"/>
-				            <div class="control_indicator"></div>
-				        </label>
-				        
-				        
+	        					<label class="control control-checkbox">
+						            Extraction
+						            <input class="messageCheckbox" type="checkbox" id="extraction" name="choice" value="750"  />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Surgical Removal
+						            <input class="messageCheckbox" type="checkbox" id="surgical" name="choice" value="2000"  />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Tooth Whitening
+						            <input class="messageCheckbox" type="checkbox" id="whitening" name="choice" value="4500" />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Flexible Removable Denture
+						            <input class="messageCheckbox" type="checkbox" id="flexible" name="choice" value="3800"  />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Odontectomy
+						            <input class="messageCheckbox" type="checkbox" id="odontectomy" name="choice" value="8000"  />
+						            <div class="control_indicator"></div>
+						        </label>
+	        					<label class="control control-checkbox">
+						            Full Denture
+						            <input class="messageCheckbox" type="checkbox" id="fullden" name="choice" value="5000"  />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Crown Gold
+						            <input class="messageCheckbox" type="checkbox" id="crowngold" name="choice" value="10000"  />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Root Canal Treatment
+						            <input class="messageCheckbox" type="checkbox" id="rootcanal" name="choice" value="6000"  />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Crown Removal
+						            <input class="messageCheckbox" type="checkbox" id="crossremoval" name="choice" value="1000"  />
+						            <div class="control_indicator"></div>
+						        </label>
+						        <label class="control control-checkbox">
+						            Bridge Removal
+						            <input class="messageCheckbox" type="checkbox" id="bridgeremoval" name="choice" value="2000" />
+						            <div class="control_indicator"></div>
+						        </label>
+						        Total Amount: <input type="text" size="2" name="total" value="0"/>
+						        <br>
+						        <button type="button" id="insertData" onclick="checkTotal();">Submit</button>
+						        <button type="button" id="insertData" onclick="this.form.reset();"">CLEAR</button>
+	        				
 			   		 </div>
-			   		 <button type="button" id="insertData">Insert Data</button>
-
-			   		 
-			   		 
-			   		
 			<!--			<label for="service"><b>Service: </b></label>
 							<input type="text" placeholder="Service" name="service" id="service" required>  -->
-							<br>
-	        			</div>
+	      		 </form>	
 	        </div>
 	    </div>       		
        		<fieldset>
        			<legend>Transactions</legend>
-       			<div id="storageOut"></div>
+       			<div id="storageOut">
+       			</div>
        		</fieldset>
-       		<fieldset>
-       			<legend>Total</legend>
-       			<div id="computeOut"></div>
-       		</fieldset>
+       		<div class="row">
+       			<div class="columns">
+       				<button type="button" id="sendData">SEND</button>
+       			</div>
+       			<div class="columns" id="wipeOutData">
+       				<button id="Clear localStorage" onclick="showConfirm();" style="float: right;background-color: red">Clear localStorage</button>
+       			</div>
+       		</div>
 	</div>
 
 </body>
