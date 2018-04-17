@@ -1,8 +1,8 @@
 {
   "name": "Dental Clinic Expense Manager",
-  "short_name": "DCEM",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "short_name": "DC",
+  "theme_color": "#585b5d",
+  "background_color": "#e6ecf1",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",
