@@ -134,16 +134,26 @@ function showAll(){
 //AJAX CODE FOR SENDING TO THE SERVER
 function sendAllData(){
 
-	var fullname = localStorage.getItem('name');
-	var last = localStorage.getItem('last');
-	var today = localStorage.getItem('date');
-	var service = localStorage.getItem('service');
-	var price = localStorage.getItem('price')
-
-	var result = "Patient Name:"+fullname +"<br/> Date: "+ today +"<br/> Service(s): "+service+"<br/> Price: "+price;
-	
+	var fullname = JSON.parse(localStorage.getItem('name'));
+	var fullLength = fullname.length;
+	//var today = localStorage.getItem('date');
+	var today = JSON.parse(localStorage.getItem('date'));
+	var todayLength = today.length;
+	//var service = localStorage.getItem('service');
+	var service = JSON.parse(localStorage.getItem('service'));
+	var servLength = service.length;
+	//var price = localStorage.getItem('price')
+	var price = JSON.parse(localStorage.getItem('price'))
+	var priceLength = price.length;
+	var result = [];
 	var request = new XMLHttpRequest();
-	request.open('POST','localhost', true);
-	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-	request.send(result);
+	for(var i = 0;i<fullLength;i++){
+		result += "Patient Name:"+fullname[i] +"<br/> Date: "+ today[i] +"<br/> Service(s): "+service[i]+"<br/> Price: "+price[i];
+		request.open('POST','localhost', true);
+		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		request.send(result);
+
+	}
+	
+	
 }
