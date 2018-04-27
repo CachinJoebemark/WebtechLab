@@ -45,13 +45,15 @@
 }
 
 .display{
-	padding-top: 90px;
-    text-align: center;
-	margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 200px;
-    border: 1px solid #777;
+  position:50px;
+  margin-top: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  width: absolute;
+  border: 5px solid #777;
+  background-color: #F59502;
+  box-sizing: border-box;
+  border-style: double;
 }
 
 /*Positioning the header to the top*/
