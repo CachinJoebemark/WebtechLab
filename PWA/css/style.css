@@ -44,6 +44,14 @@
   }
 }
 
+.display{
+	padding-top: 90px;
+	margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 200px;
+}
+
 /*Positioning the header to the top*/
 header {
     text-align: center;
@@ -52,16 +60,8 @@ header {
     right: 0;
     left: 0;
     overflow: hidden;
-    background-color: #00b0ff;
+    background-color: #F59502;
 }
-header h1{
-	color:white;
-}
-header img {
-  width: 50px;
-  height: 50px;
-}
-
 /*Rows and Columns*/
 .columns {
     float: left;
@@ -69,13 +69,10 @@ header img {
 }
 /*Content*/
 .container {
-  padding: 5%;
-  border: 1px groove ;
   position: absolute;
-  top:20%;
-  right: 20%;
-  left: 20%;
-  margin-top:3%;
+  top:auto;
+  right: 0;
+  left: 0;
 }
 
 .control {
@@ -153,7 +150,7 @@ header img {
 /* custom styles */
 body {
   padding: 4em;
-  background: white;
+  background: #e5e5e5;
   font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
 label {

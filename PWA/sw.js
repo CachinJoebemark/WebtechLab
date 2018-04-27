@@ -1,11 +1,14 @@
-var CACHE_NAME = 'example';
 var urlsToCache = [
   '/',
   './css/style.css',
   './js/app.js',
   './sw.js',
-  './images/calendar.png',
-  './js/function.js'
+  './images/icons/logo.png',
+  './js/function.js',
+  './js/vanilla.js',
+  'manifest.json',
+  './js/date.js',
+  'index.html'
 ];
 
 self.addEventListener('install', function(event) {
