@@ -62,8 +62,12 @@ function clearStorage(){
 		location.reload();
 }
 
+function reload(){
+	window.location.reload();
+}
 
 function showAll(){
+	
 	for(let i = 0;i < localStorage.length;i++){
 		//var fullname = localStorage.getItem('name');
 		var fullname = JSON.parse(localStorage.getItem('name'));

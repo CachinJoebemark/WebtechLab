@@ -46,10 +46,12 @@
 
 .display{
 	padding-top: 90px;
+    text-align: center;
 	margin: 5px;
     border: 1px solid #ccc;
     float: left;
     width: 200px;
+    border: 1px solid #777;
 }
 
 /*Positioning the header to the top*/
